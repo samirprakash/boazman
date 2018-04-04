@@ -1,4 +1,2 @@
 assets
 node_modules
-static/css/*
-!static/css/.gitkeep
