@@ -1,0 +1,15 @@
+{{ define "title" }}
+  {{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+    <h1 class="uk-h1 tm-heading-fragment">{{ .Title }}</h1>
+    {{ if .Params.subtitle }}
+    <p class="uk-text-lead">{{ .Params.subtitle }}</p>
+    {{ end }}
+    {{ .Content | emojify }}
+{{ end }}
+
+{{ define "sidebar-right" }}
+  {{ partial "toc.html" . }}
+{{ end }}

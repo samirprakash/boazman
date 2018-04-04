@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/theme.css" />
+</head>
+<body class="uk-offcanvas-container uk-offcanvas-overlay">
+    <div class="uk-offcanvas-content">
+        {{ partial "header.html" . }}
+        <!-- sidebar -->
+        {{ partial "sidebar.html" . }}
+
+        <!--content body -->
+        <div class="tm-main uk-section uk-section-default">
+            <div class="uk-container uk-container-small uk-position-relative">
+                <div>
+                    {{ block "main" . }}
+                    {{ end }}
+                </div>
+                {{ block "sidebar-right" . }}
+                {{ end }}
+            </div>
+        </div>
+
+        <!-- footer -->
+        {{ partial "footer.html" . }}
+    </div>
+
+    <!-- javascript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.41/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.41/js/uikit-icons.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://unpkg.com/mermaid@8.0.0-alpha.9/dist/mermaid.min.js"></script>
+    <script>
+    $(document).load(function() {
+        mermaid.initialize(config);
+    });
+    </script>
+</body>
+</html>

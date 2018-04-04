@@ -1,0 +1,14 @@
+<div class="tm-sidebar-left uk-visible@m">
+    <h3>Documentation</h3>
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.docs }}
+    {{ if .HasChildren }}
+    <ul class="uk-nav uk-nav-default tm-nav uk-margin-top">
+        <li class="uk-nav-header">{{ .Name }}</li>
+        {{ range .Children }}
+        <li {{ if $currentPage.IsMenuCurrent "docs" . }}class="uk-active"{{ end }}><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+    </ul>
+    {{ end }}
+    {{ end }}
+</div>
