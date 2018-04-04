@@ -1,0 +1,21 @@
+{
+  "name": "pg-infra-docs",
+  "version": "0.1.0",
+  "description": "Documentation for PG",
+  "main": "index.js",
+  "repository": {
+    "url": "https://github.com/toyota-connected/pg-infra-docs"
+  },
+  "scripts": {
+    "install": "npm install --prefix ./node_modules/uikit && symlink-dir ./node_modules/uikit ./assets/uikit",
+    "setup": "npm install && npm run compile",
+    "compile": "mkdirp css && ./node_modules/.bin/lessc less/theme.less > static/css/theme.css --relative-urls --rootpath=../less/ -x"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "less": "^2.7.3",
+    "mkdirp": "^0.5.1",
+    "symlink-dir": "^1.1.2",
+    "uikit": "^3.0.0-beta.41"
+  }
+}
