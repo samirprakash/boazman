@@ -1,21 +1,21 @@
 {
-  "name": "pg-infra-docs",
+  "name": "boazman",
   "version": "0.1.0",
-  "description": "Documentation for PG",
+  "description": "A generic documentation theme for dvelopment teams",
   "main": "index.js",
   "repository": {
-    "url": "https://github.com/toyota-connected/pg-infra-docs"
+    "url": "https://github.com/samirpraksh/boazman"
   },
   "scripts": {
     "install": "npm install --prefix ./node_modules/uikit && symlink-dir ./node_modules/uikit ./assets/uikit",
     "setup": "npm install && npm run compile",
-    "compile": "mkdirp css && ./node_modules/.bin/lessc less/theme.less > static/css/theme.css --relative-urls --rootpath=../less/ -x"
+    "compile": "mkdirp css && ./node_modules/.bin/lessc less/theme.less > static/css/theme.css --rewrite-urls=all --rootpath=../less/ -x"
   },
   "license": "ISC",
   "devDependencies": {
-    "less": "^2.7.3",
+    "less": "^3.9.0",
     "mkdirp": "^0.5.1",
-    "symlink-dir": "^1.1.2",
-    "uikit": "^3.0.0-beta.41"
+    "symlink-dir": "^3.0.0",
+    "uikit": "^3.0.3"
   }
 }
